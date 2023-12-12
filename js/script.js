@@ -220,11 +220,18 @@ function iniciar(){
         while (control == 0){
             if(nombre === null){
                 alert('Por favor ingrese un nombre')
-                nombre = prompt('Ingrese su nombre')
+            }else if(nombre == ''){
+                alert('Por favor ingrese un nombre')
+            }else if(parseInt(nombre)){
+                alert('Por favor no ingrese números')
             }else{
-                nombre = validarDatoVacio(nombre,'Ingrese su nombre')
                 control = 1
             }
+
+            if(control == 0){
+                nombre = prompt('Ingrese su nombre')
+            }
+            
         }
                        
         alert('Pasaremos a realizar el pedido de la hamburguesa')
