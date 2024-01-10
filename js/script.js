@@ -1,26 +1,3 @@
-class Hamburguesa {
-    constructor (tipo,aderezos,adicionales){
-        this.tipo = tipo
-        this.aderezos = aderezos
-        this.adicionales = adicionales
-    }
-}
-
-class Bebida {
-    constructor (bebida,tamanio){
-        this.bebida = bebida
-        this.tamanio = tamanio
-    }
-}
-
-class Complemento {
-    constructor (complemento,aderezos,adicionales){
-        this.complemento = complemento
-        this.aderezos = aderezos
-        this.adicionales = adicionales
-    }
-}
-
 const objTipoHamburguesa = [
     {nombre: "Simple", precio: 2500},
     {nombre: "Doble", precio: 3500},
@@ -80,6 +57,10 @@ function cargarOpciones(titulo,objeto){
     });
     opciones += `</section>`
     return opciones    
+}
+
+function cargarPedido(id){
+
 }
 
 function ocultarSecciones(mostrar,ocultar){
@@ -245,13 +226,16 @@ let cuerpo = ``
 inicio.addEventListener("click", ()=>{
     ocultarSecciones("hamburguesa","portada")
     ordenId++
+    
     titulo = document.createElement("h2")
     titulo.innerText = "Pedido - " + ordenId
     pedido.appendChild(titulo)
+    
     cuerpo = document.createElement("h3")
     cuerpo.id = "PedidoHamburguesa"
     cuerpo.innerText = "Hamburguesa"
     pedido.appendChild(cuerpo)
+    
     botonAtras.hidden = false
     botonSiguiente.hidden = false
     controlPage = 1
